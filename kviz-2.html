@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style type="text/css">
+            body { background: #42426F; }
+            p { color: white; font-size: 20px; }
+        </style>
+    </head>
+    <body>
+        <h1>Kviz</h1>
+        <p>Jak se jmenuje hlavni postava Harryho Pottera?</p>
+        <input id="radio1" type="radio" />
+        <label>Henry Propr</label>
+        <input type="radio" />
+        <label>High Pothead</label>
+        <input type="radio" />
+        <label>Harry Potter</label>
+        
+        <p>Jak se jmenuje Hermiona jmenem?</p>
+        <input id="jmeno" type="text" />
+
+        <p>Je Hermiona mudl?</p>
+        <input id="ano" type="checkbox" />
+        <label>Ano</label>
+        <input type="checkbox" />
+        <label>Asi ano</label>
+        
+        <p>Jakou ma Dobby barvu?</p>
+        <input id="barva" type="color" />
+
+        <p>Kdy Harry Potter dodelal bradavickou maturitu?</p>
+        <input id="datum" type="date" />
+
+        <p>Kdo je moje nejoblibenejsi postava z Pana Prstenu (max. 2)?</p>
+        <select id="postava" multiple>
+            <option>The 1 Ring</option>
+            <option>Dobby</option>
+            <option>Hermione</option>
+            <option>Boromir</option>
+        </select>
+
+        <script>
+            function validate() {
+                if (!document.getElementById("radio1").checked) {
+                    alert("Spatne prvni otazka")
+                } else if (document.getElementById("jmeno").value != "Hermiona") {
+                    alert("Spatne druha otazka")
+                } else if (!document.getElementById("ano").checked) {
+                    alert("Spatne treti otazka")
+                } else if (document.getElementById("barva").value != "gray") {
+                    alert("Spatne ctvrta otazka")
+                } else if (document.getElementById("datum").value) {
+                    alert("Spatne pata otazka (nema)")
+                } else if (document.getElementById("postava").value != "Boromir") {
+                    alert("Spatne prvni otazka")
+                }
+            }
+            
+        </script>
+        <button onclick="validate()">Validace</button>
+    </body>
+</html>
